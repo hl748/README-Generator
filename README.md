@@ -15,4 +15,6 @@ This application is for developers that want to quickly create a good README fil
 
 ![Screenshot3](screenshot3.jpg)
 
-[![Video Link](screenshot3.jpg)](https://youtu.be/8xKK9AYVUMI)
+Link to Demo:
+
+[![Video Link](video-screenshot.jpg)](https://youtu.be/8xKK9AYVUMI)
