@@ -2,7 +2,6 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 const asynchronousWriteFile = util.promisify(fs.writeFile)
-​
 prompt = () => {
   return inquirer.prompt(
     [
@@ -30,7 +29,7 @@ prompt = () => {
         type: "list",
         name: "license",
         message: "What is the license for your project?",
-        choices: ["default", "this", "that"]
+        choices: ["MIT", "Apache"],
       },
       {
         type: "input",
@@ -61,38 +60,50 @@ prompt = () => {
         type: "input",
         name: "contact",
         message: "What is the best way to reach you?"
-      }
+      },
     ]
   )
 }
-​
 markdown = (answers) => {
-  return `
-  #${answers.title}
+  if (answers.license === "MIT") {
+    answers.badge = `![MIT](https://img.shields.io/badge/license-MIT-brightgreen)`
+  }
+  if (answers.license === "Apache") {
+    answers.badge = `![Apache](https://img.shields.io/badge/license-Apache-brightgreen)`
+  }
+  return `#${answers.title}
+  ${answers.badge}
 ​
-  ##Table of Contents
-  [Description]
-  -Installation
-  -Usage
-  -License
-  -Contributing
-  -Tests
-  -Questions
+  ## Table of Contents
+  [Description](#description)
+  [Installation](#installation)
+  [Usage](#usage)
+  [License](#license)
+  [Contributing](#contributing)
+  [Tests](#tests)
+  [Questions](#questions)
 ​
-  [Description]${answers.description}
-  [Installation]${answers.installation}
-  [Usage]${answers.usage}
-  [License]${answers.license}
-  Contributing]${answers.contributing}
-  [Tests]${answers.tests}
-  [Questions]${answers.questions} "/n"
-  [GitHub](www.github.com/${answers.github})
-  ${answers.email}
-  ${answers.contact}
+  ## Description
+  ${answers.description}
+  ## Installation
+  ${answers.installation}
+  ## Usage
+  ${answers.usage}
+  ## License
+  The license for your website is ${answers.license}
+  ## Contributing
+  ${answers.contributing}
+  ## Tests
+  ${answers.tests}
+  ## Questions
+  ${answers.questions}
+  GitHub: (www.github.com/${answers.github})  
+  Email: ${answers.email}  
+  Answers: ${answers.contact}
   `
 }
-​
 async function initialize () {
+ 
   try{
   const answers = await prompt();
   const generate = markdown(answers);
@@ -102,5 +113,4 @@ async function initialize () {
     console.log(err)
   }
 }
-​
 initialize();
