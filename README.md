@@ -15,6 +15,4 @@ This application is for developers that want to quickly create a good README fil
 
 ![Screenshot3](screenshot3.jpg)
 
-<figure class="video_container">
-  <iframe src="https://drive.google.com/file/d/1qAjH8qm1E-N1ROe590aKjqyuL3FEv1SB/preview" width="640" height="480"></iframe>
-</figure>
+[![Video Link](screenshot3.jpg)](https://youtu.be/8xKK9AYVUMI)
