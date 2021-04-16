@@ -1,9 +1,9 @@
 # README Generator
 
 ## Description
-This application is for developers that want to quickly create a good README file. When the user is in the folder of this application and runs "node index.js", the application prompts the user with a series of questions related to their project in the command line. Then, the application generates a README file in markdown using the answers that were provided by the user.
+This application is for developers that want to quickly create an excellent README file. When the user is in the folder of this application and runs using "node index.js", the application prompts the user with a series of questions related to their project in the command line. The application generates a README file in markdown using the provided answers.
 
-1. Run "node index.js" while in the folder of the application in command line.
+1. Run with "node index.js" in the application in command line.
 
 ![Screenshot1](screenshot1.jpg)
 
