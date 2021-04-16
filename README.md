@@ -7,11 +7,11 @@ This application is for developers that want to quickly create an excellent READ
 
 ![Screenshot1](screenshot1.jpg)
 
-2. Answer the questions prompted by the application.
+2. Enter the questions prompted by the application.
 
 ![Screenshot2](screenshot2.jpg)
 
-3. The README file is generated based on the user's answers to the application's questions.
+3. The README file is generated based on responses.
 
 ![Screenshot3](screenshot3.jpg)
 
